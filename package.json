@@ -1,0 +1,30 @@
+{
+    "name": "WPromises",
+    "studioName": "WPromises",
+    "category": "AMorgaut",
+    "iconPath": "/icons/widget.png",
+    "author": "Alexandre Morgaut (http://github.com/AMorgaut)",
+    "version": "1.0.0",
+    "copyright": "(c) 2015 Alexandre Morgaut",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AMorgaut/WPromises.git"
+    },
+    "keywords": ["wakanda", "widget", "es6", "promises", "polyfill"],
+    "engines": {"wakanda": ">= 9"},
+    "license": "MPL",
+    "externalWidgets": [ ],
+    "loadDependencies": [
+        {"id": "Widget_V2"},
+        {"id": "WPromises/widget.js", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "WPromises/css/widget.css", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "WPromises/designer.js", "studioOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "WPromises/lib/bluebird/bluebird.min.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "WPromises/scripts/promisify.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "WPromises/scripts/methods.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "WPromises/scripts/p-rpc.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "WPromises/scripts/p-dataprovider.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "WPromises/scripts/p-datasource.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "WPromises/scripts/p-component.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"}
+    ]
+}
