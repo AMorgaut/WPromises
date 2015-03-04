@@ -4,14 +4,14 @@
     "category": "AMorgaut",
     "iconPath": "/icons/widget.png",
     "author": "Alexandre Morgaut (http://github.com/AMorgaut)",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "copyright": "(c) 2015 Alexandre Morgaut",
     "repository": {
         "type": "git",
         "url": "https://github.com/AMorgaut/WPromises.git"
     },
     "keywords": ["wakanda", "widget", "es6", "promises", "polyfill"],
-    "engines": {"wakanda": ">= 9"},
+    "engines": {"wakanda": ["9", "10"]},
     "license": "MPL",
     "externalWidgets": [ ],
     "loadDependencies": [
@@ -25,6 +25,9 @@
         {"id": "WPromises/scripts/p-rpc.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
         {"id": "WPromises/scripts/p-dataprovider.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
         {"id": "WPromises/scripts/p-datasource.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
-        {"id": "WPromises/scripts/p-component.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"}
+        {"id": "WPromises/scripts/p-component.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "WPromises/tests/test-rpc.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "WPromises/tests/test-datasource.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "WPromises/tests/test-dataprovider.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"}
     ]
 }

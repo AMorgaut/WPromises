@@ -4,7 +4,7 @@ WAF.define('WPromises', ['waf-core/widget'], function(widget) {
 
         /* INIT */
         init: function() {
-            var test
+            var test, div;
             
             if (!this.active()) {
                 return;
@@ -12,10 +12,20 @@ WAF.define('WPromises', ['waf-core/widget'], function(widget) {
 
             this.polyfill();
 
-            test = this.testsOutput && this.testsOutput();
+            test = this.testsOutput();
+            test = document.getElementById(test);
             if (test) {
-                this.runTests(WAF.widgets[test]);
+                div = document.createElement('DIV');
+                div.setAttribute('id', 'qunit');
+                test.appendChild(div);
+                div = document.createElement('DIV');
+                div.setAttribute('id', 'qunit_fixture');
+                test.appendChild(div);
+                if (this.autorunTests()) {
+                    this.runTestSuites();
+                }
             }
+
         },
         
         /* PROPERTIES */
@@ -42,7 +52,7 @@ WAF.define('WPromises', ['waf-core/widget'], function(widget) {
             type: 'boolean',
             defaultValue: true,
             bindable: false
-        })
+        }),
         
         /*
         component: widget.property({
@@ -52,13 +62,19 @@ WAF.define('WPromises', ['waf-core/widget'], function(widget) {
         }),
         */
         
-        /*
+        
         testsOutput: widget.property({
             type: 'string',
             defaultValue: '',
             bindable: false
+        }),
+        
+        autorunTests: widget.property({
+            type: 'boolean',
+            defaultValue: false,
+            bindable: false
         })
-        */
+        
         
     });
 

@@ -30,14 +30,12 @@
      * @experimental
      * @method runTests
      **/
-    WPromises.prototype.runTests = function runWPromisesTests() {
-        var that;
-        that = this;
+    WPromises.prototype.runTestSuites = function runTestSuites() {
         if (!this.active()) {
             return;
         }
-        WPromises.TESTS.forEach(function (api) {
-            // TODO
+        WPromises.TESTS.forEach(function runTests(testSuite) {
+            testSuite.run();
         });
     };
     
@@ -56,6 +54,23 @@
             name: name, 
             init: init,
             thenify: thenify
+        });
+    };
+    
+    
+    /**
+     * Add a Wakanda Promise Polyfill API
+     *
+     * @static
+     * @method addAPI
+     * @param {string} name
+     * @param {Function} init
+     * @param {boolean} thenify
+     **/
+    WPromises.addTESTS = function addTestSuite(name, run) {
+        WPromises.TESTS.push({
+            name: name, 
+            run: run
         });
     };
     

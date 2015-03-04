@@ -43,7 +43,7 @@
     DATASOURCE_SERVER_METHODS = [
         'allEntities', 'buildFromSelection', 'callMethod', 'collectionRefresh', 'distinctValues', 'filterQuery',
         'getElements', 'getValues', 'orderBy', 'query', 'removeCurrent', 'removeCurrentReference', 'resolveSource',
-        'save', 'selectByKey', 'setEntityCollection'//, 'toArray'
+        'save', 'setSelection', 'selectByKey', 'setEntityCollection'//, 'toArray'
     ];
     DATASOURCE_SERVER_SIMPLE_ATTR_METHODS = [
         'setValue', 'fire', 'dispatch'
