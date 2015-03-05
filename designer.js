@@ -4,7 +4,7 @@
     WPromises.setHeight('20');
 
     WPromises.prototype.init = function() {
-        this.node.innerHTML = "Promise APIs enabled";
+        this.node.innerHTML = 'Promise APIs enabled';
     }
 
 });

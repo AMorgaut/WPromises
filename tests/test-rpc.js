@@ -58,12 +58,6 @@
     }
     
     
-    QUnit.config.urlConfig.push({
-        id: "rpc",
-        label: "Wakanda RPC API",
-        tooltip: "Run Wakanda RPC API Promisification Unit tests"
-    });
-    
     WPromises = WAF.require('WPromises');
     WPromises.addTESTS('rpc', rpcTests);
     

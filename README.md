@@ -5,13 +5,13 @@ The `WPromise` "custom widget" Polyfill some of the main frontend Wakanda Asynch
 
 ## How to Install
 
-You can install a custom widget by using the [Add-ons Extension](http://doc.wakanda.org/WakandaStudio/help/Title/en/page4263.html "Add-ons Extension"). 
+You can install the `WPromise` widget by using the [Add-ons Extension](http://doc.wakanda.org/WakandaStudio/help/Title/en/page4263.html "Add-ons Extension"). 
 
 For more information, refer to the [Installing a Custom Widget](http://doc.wakanda.org/WakandaStudio/help/Title/en/page3869.html#1056003 "Installing a Custom Widget") manual.
 
 ## How to Use
 
-Drag & drop the `WPromise` custom widget on your Wakanda Page. It will automatically Promisify the supported Wakanda Framework APIs.
+Drag & drop the `WPromise` widget on your Wakanda Page. It will automatically Promisify the supported Wakanda Framework APIs.
 
 ### RPC example
 

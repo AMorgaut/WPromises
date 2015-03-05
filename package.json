@@ -1,10 +1,10 @@
 {
     "name": "WPromises",
     "studioName": "WPromises",
-    "category": "AMorgaut",
-    "iconPath": "/icons/widget.png",
+    "category": "Polyfill",
+    "iconPath": "/icons/js_logo.jpg",
     "author": "Alexandre Morgaut (http://github.com/AMorgaut)",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "copyright": "(c) 2015 Alexandre Morgaut",
     "repository": {
         "type": "git",
@@ -13,7 +13,7 @@
     "keywords": ["wakanda", "widget", "es6", "promises", "polyfill"],
     "engines": {"wakanda": ["9", "10"]},
     "license": "MPL",
-    "externalWidgets": [ ],
+    "externalWidgets": ["QUnit"],
     "loadDependencies": [
         {"id": "Widget_V2"},
         {"id": "WPromises/widget.js", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},

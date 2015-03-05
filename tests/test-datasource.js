@@ -147,11 +147,6 @@
 //        'getElements', 'getValues', 'removeCurrent', 'removeCurrentReference', 'resolveSource',
 //        'save', 'setSelection', 'selectByKey', 'setEntityCollection'//, 'toArray'
     
-    QUnit.config.urlConfig.push({
-        id: "datasource",
-        label: "Wakanda Datasource API",
-        tooltip: "Run Wakanda Datasource API Promisification Unit tests"
-    });
     
     WPromises = WAF.require('WPromises');
     WPromises.addTESTS('datasource', datasourceTests);

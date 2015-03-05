@@ -97,13 +97,6 @@
 //    ];
 
     
-    
-    QUnit.config.urlConfig.push({
-        id: "dataprovider",
-        label: "Wakanda Dataprovider API",
-        tooltip: "Run Wakanda Dataprovider API Promisification Unit tests"
-    });
-    
     WPromises = WAF.require('WPromises');
     WPromises.addTESTS('dataprovider', dataproviderTests);
     
