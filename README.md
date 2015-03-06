@@ -41,8 +41,7 @@ This widget has the following properties:
 * __Rpc__: Makes the Wakanda Rpc methods results usable as Promises
 * __Dataprovider__: Makes the WakandaDB frontend Data Provider API Promises compliant
 * __Datasource__: Makes the WakandaDB frontend DataSource API Promises compliant
-* __Tests Output__: A container widget ID in which Unit tests results will be published
-* __Autorun Tests__: Automatically run the unit tests (if the "Tests Output" container ID is valid)
+* __Autorun Tests__: Automatically run the unit tests if a [QUnit](https://github.com/AMorgaut/WQunit) widget is on the page
 
 
 ## References
