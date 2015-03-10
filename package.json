@@ -4,7 +4,7 @@
     "category": "Polyfill",
     "iconPath": "/icons/js_logo.jpg",
     "author": "Alexandre Morgaut (http://github.com/AMorgaut)",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "copyright": "(c) 2015 Alexandre Morgaut",
     "repository": {
         "type": "git",
