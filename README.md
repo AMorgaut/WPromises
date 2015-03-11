@@ -52,8 +52,8 @@ If you want to check the result of this custom widget, you can manually run the 
 
 * `runTestSuites()`: Manually run the unit tests if a [QUnit](https://github.com/AMorgaut/WQunit) widget is on the page
 
-You may also choose to not activate the global APIs polyfills but to do it manually on specific objects/methods
-only when it makes sens. It can be faster as their is less initialisation time required.
+You may also choose to not activate the global APIs polyfills but to polyfil manually specific objects/methods
+only when it makes sense. It can be faster as there is then less initialisation time required.
 It can be very useful to parallelise or chain existing promise results with Wakanda async API results.
 
 Two methods are then available for that:
@@ -97,6 +97,7 @@ same object as the original method, extended with promise `then()` and `catch() 
 
 #### Tutorials
 
+* [Wakanda Bluebird Promise Polyfil](https://github.com/AMorgaut/Bluebird)
 * [Embrassing Promises](http://javascriptplayground.com/blog/2015/02/promises/)
 * [HTML5 Rocks: Promises](http://www.html5rocks.com/en/tutorials/es6/promises/)
 * [Dr Axel Rauschmayer Blog: Promises](http://www.2ality.com/2014/10/es6-promises-api.html)
