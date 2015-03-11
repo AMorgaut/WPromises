@@ -1,6 +1,9 @@
 # Promise polyfill for [Wakanda](http://wakanda.org)
 
-The `WPromise` "custom widget" Polyfill some of the main frontend Wakanda Asynchronous APIs to a Promisified version
+![Promise Icon](./icons/then.png) 
+
+The `WPromise` "custom widget" Polyfill some of the main frontend Wakanda Asynchronous APIs to a Promisified version.
+It uses the [Bluebird custom widget](https://github.com/AMorgaut/Bluebird) based on the [Bluebird Library](https://github.com/petkaantonov/bluebird).
 
 
 ## How to Install
@@ -33,7 +36,7 @@ Let say you have an `employee` datasource on your page. `WPromise` will let you 
     })    
 ```
 
-### Properties
+## Properties
 
 This widget has the following properties:
 
@@ -43,7 +46,43 @@ This widget has the following properties:
 * __Datasource__: Makes the WakandaDB frontend DataSource API Promises compliant
 * __Autorun Tests__: Automatically run the unit tests if a [QUnit](https://github.com/AMorgaut/WQunit) widget is on the page
 
+## Methods
 
+If you want to check the result of this custom widget, you can manually run the unit tests
+
+* `runTestSuites()`: Manually run the unit tests if a [QUnit](https://github.com/AMorgaut/WQunit) widget is on the page
+
+You may also choose to not activate the global APIs polyfills but to do it manually on specific objects/methods
+only when it makes sens. It can be faster as their is less initialisation time required.
+It can be very useful to parallelise or chain existing promise results with Wakanda async API results.
+
+Two methods are then available for that:
+
+* `promisify(context, methodName[, resultHook])`: return a promisified version of the method
+* `thenify(context, methodName[, resultHook])`: return a thenified version of the method
+
+`thenify()` is a safest version of `promisify()` which instead of returning a real promise, returns the
+same object as the original method, extended with promise `then()` and `catch() methods.
+
+### promisify() & thenify() Arguments
+
+* `context`: the object to which belongs the method
+* `methodName`: the method you want to return a promise
+* `[resultHook]`: (optional) a callback to refactor the method result
+
+`resultHook` is used by WPromise to automatically promisify or thenify async methods of a returned object result
+
+### Dataprovider Example
+
+```javascript
+	var empQuery = wPromise1.thenify(ds.Employee, 'query');
+	// you can now do
+    empQuery('age > :1', {params: [25]}).then(function success(result) {
+    	alert('success:' + result);
+    }).catch(function (error) {
+		alert('error:' + error);
+	});
+```
 ## References
 
 ### Wakanda APIs
