@@ -4,7 +4,7 @@
     "category": "Polyfill",
     "iconPath": "/icons/then.png",
     "author": "Alexandre Morgaut (http://github.com/AMorgaut)",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "copyright": "(c) 2015 Alexandre Morgaut",
     "repository": {
         "type": "git",
@@ -26,6 +26,7 @@
         {"id": "WPromises/scripts/p-dataprovider.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
         {"id": "WPromises/scripts/p-datasource.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
         {"id": "WPromises/scripts/p-component.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "WPromises/tests/test-readme.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
         {"id": "WPromises/tests/test-rpc.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
         {"id": "WPromises/tests/test-datasource.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
         {"id": "WPromises/tests/test-dataprovider.js", "runtimeOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"}

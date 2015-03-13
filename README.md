@@ -23,7 +23,7 @@ Let say you have an `hello` RPC CommonJS module on your Wakanda Server that expo
 ```javascript
     hello.helloWorld().then(function success(result) {
     	alert(result);
-    })    
+    });
 ```
 
 ### Datasource example
@@ -32,8 +32,8 @@ Let say you have an `employee` datasource on your page. `WPromise` will let you 
 
 ```javascript
     WAF.sources.employee.query('salary > 50000').then(function success(event) {
-    	alert(event.result.length);
-    })    
+    	alert(event.dataSource.length);
+    });
 ```
 
 ## Properties
@@ -75,7 +75,8 @@ same object as the original method, extended with promise `then()` and `catch() 
 ### Dataprovider Example
 
 ```javascript
-	var empQuery = wPromise1.thenify(ds.Employee, 'query');
+    var polyfill = WAF.widgets.wPromises1;
+	var empQuery = polyfill.thenify(ds.Employee, 'query');
 	// you can now do
     empQuery('age > :1', {params: [25]}).then(function success(result) {
     	alert('success:' + result);

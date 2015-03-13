@@ -95,7 +95,7 @@
         
         method = context[wMethodName].bind(context);
         if (method._thenified || method._promisified) {
-            return;
+            return method;
         }
         newMethod = (function asyncPromiseMethod() {
             var params, options;
@@ -136,7 +136,7 @@
         
         method = context[wMethodName];
         if (method._thenified || method._promisified) {
-            return;
+            return method;
         }
         newMethod = (function asyncMethod() {
             var params, options, result;
