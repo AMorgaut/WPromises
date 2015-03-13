@@ -1,80 +1,73 @@
-(function Scope_P_Test_Dataprovider() {
+WAF.require('WPromises').addTESTS('DATAPROVIDER', 'dataprovider', function dataproviderTests() {
+
     'use strict';
+        
+    var dataclass;
     
-    var WPromises;
+    dataclass = WAF.ds[Object.keys(WAF.ds.getDataClasses())[0]];
     
-    function dataproviderTests() {
-        
-        var dataclass;
-        
-        dataclass = WAF.ds[Object.keys(WAF.ds.getDataClasses())[0]];
-        
-        QUnit.module( "Wakanda Data provider API Promisification" );
-        
-        QUnit.test( "allEntities({userData: 42}) result Promise API", function( assert ) {
-            var promise;
-            assert.expect(4);
-            promise = dataclass.allEntities({userData: 42});
-            assert.ok(typeof promise.then === 'function', "then() exists" );
-            assert.ok(typeof promise['catch'] === 'function', "catch() exists" );
-            promise.then(function (event) {
-                assert.ok(true, 'then() is invoked');
-                assert.ok(event.userData === 42, 'userData is valid');
-            });
-            return promise;
+    QUnit.test( "allEntities({userData: 42}) result Promise API", function( assert ) {
+        var promise;
+        assert.expect(4);
+        promise = dataclass.allEntities({userData: 42});
+        assert.ok(typeof promise.then === 'function', "then() exists" );
+        assert.ok(typeof promise['catch'] === 'function', "catch() exists" );
+        promise.then(function (event) {
+            assert.ok(true, 'then() is invoked');
+            assert.ok(event.userData === 42, 'userData is valid');
         });
-        
-        QUnit.test( "allEntities() - catch then() callback error", function( assert ) {
-            var promise;
-            assert.expect(1);
-            promise = dataclass.allEntities();
-            promise.then(function () { throw true; })['catch'](function () {
+        return promise;
+    });
+    
+    QUnit.test( "allEntities() - catch then() callback error", function( assert ) {
+        var promise;
+        assert.expect(1);
+        promise = dataclass.allEntities();
+        promise.then(function () { throw true; })['catch'](function () {
 
-                assert.ok(true, 'catch() is invoked');
+            assert.ok(true, 'catch() is invoked');
 
-            });
-            return promise;
         });
-        
-        QUnit.test( "query('ID > 0') - catch then() callback error", function( assert ) {
-            var promise;
-            assert.expect(2);
-            promise = dataclass.query('ID > 0', {userData: 42});
-            assert.ok(typeof promise['catch'] === 'function', "catch() exists" );
-            promise.then(function (event) {
-                
-                assert.ok(event.userData === 42, 'userData is valid');
+        return promise;
+    });
+    
+    QUnit.test( "query('ID > 0') - catch then() callback error", function( assert ) {
+        var promise;
+        assert.expect(2);
+        promise = dataclass.query('ID > 0', {userData: 42});
+        assert.ok(typeof promise['catch'] === 'function', "catch() exists" );
+        promise.then(function (event) {
+            
+            assert.ok(event.userData === 42, 'userData is valid');
 
-            });
-            return promise;
         });
-        
-        QUnit.test( "query('ID > :1', {params: [0], userData: 42}) - catch then() callback error", function( assert ) {
-            var promise;
-            assert.expect(2);
-            promise = dataclass.query('ID > :1', {params: [0], userData: 42});
-            assert.ok(typeof promise['catch'] === 'function', "catch() exists" );
-            promise.then(function (event) {
-                
-                assert.ok(event.userData === 42, 'userData is valid');
+        return promise;
+    });
+    
+    QUnit.test( "query('ID > :1', {params: [0], userData: 42}) - catch then() callback error", function( assert ) {
+        var promise;
+        assert.expect(2);
+        promise = dataclass.query('ID > :1', {params: [0], userData: 42});
+        assert.ok(typeof promise['catch'] === 'function', "catch() exists" );
+        promise.then(function (event) {
+            
+            assert.ok(event.userData === 42, 'userData is valid');
 
-            });
-            return promise;
         });
-        
-        QUnit.test( "query('ID > 0') - catch then() callback error", function( assert ) {
-            var promise;
-            assert.expect(1);
-            promise = dataclass.query('ID > 0', {userData: 42});
-            promise.then(function () { throw true; })['catch'](function () {
+        return promise;
+    });
+    
+    QUnit.test( "query('ID > 0') - catch then() callback error", function( assert ) {
+        var promise;
+        assert.expect(1);
+        promise = dataclass.query('ID > 0', {userData: 42});
+        promise.then(function () { throw true; })['catch'](function () {
 
-                assert.ok(true, 'catch() is invoked');
+            assert.ok(true, 'catch() is invoked');
 
-            });
-            return promise;
         });
-        
-    }
+        return promise;
+    });
     
 //    DATASTORE_METHODS = [
 //        'addToCatalog'
@@ -95,9 +88,5 @@
 //    ATTRIBUTE_RELATED_SET_METHODS = [
 //        'getValue'//, 'setValue' // /!\ setValue is undefined
 //    ];
-
     
-    WPromises = WAF.require('WPromises');
-    WPromises.addTESTS('dataprovider', dataproviderTests);
-    
-}());
+});

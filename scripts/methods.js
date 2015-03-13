@@ -27,21 +27,34 @@
     
     
     /**
-     * @experimental
-     * @method runTests
+     * Manually run the test suites
+     *
+     * @method runTestSuites
+     * @param {Array|string} modules List of test suites to run
      **/
-    WPromises.prototype.runTestSuites = function runTestSuites() {
+    WPromises.prototype.runTestSuites = function runTestSuites(modules) {
+        var widget = this;
         if (!this.active()) {
             return;
         }
+        if (typeof modules === 'string') {
+            modules = [modules];
+        }
         WPromises.TESTS.forEach(function runTests(testSuite) {
+            if (modules && modules.indexOf(testSuite.name) === -1) {
+                return;
+            }
+            if (!widget[testSuite.enabled] || !widget[testSuite.enabled]()) {
+                return;
+            }
+            QUnit.module(testSuite.name);
             testSuite.run();
         });
     };
     
     
     /**
-     * Add a Wakanda Promise Polyfill API
+     * Add a Wakanda WPromise Polyfill API
      *
      * @static
      * @method addAPI
@@ -59,17 +72,18 @@
     
     
     /**
-     * Add a Wakanda Promise Polyfill API
+     * Add a Wakanda WPromise test suite
      *
      * @static
-     * @method addAPI
-     * @param {string} name
-     * @param {Function} init
-     * @param {boolean} thenify
+     * @method addTESTS
+     * @param {string} name test suite module name
+     * @param {string} enabled name of widget property to check 
+     * @param {Function} run function executing the test suite
      **/
-    WPromises.addTESTS = function addTestSuite(name, run) {
+    WPromises.addTESTS = function addTestSuite(name, enabled, run) {
         WPromises.TESTS.push({
-            name: name, 
+            name: name,
+            enabled: enabled,
             run: run
         });
     };
